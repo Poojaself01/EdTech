@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduConnect - Learn Anytime, Anywhere</title>
+  <link rel="stylesheet" href="style111.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+</head>
+<body>
+<script src="https://kit.fontawesome.com/9616d4a8a5.js" crossorigin="anonymous"></script>
+    
+  <header> 
+  <div class="logo">EduConnect</div>
+
+  <!-- ✅ Hamburger icon for small screens -->
+  <!-- <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div> -->
+  <!-- Menu toggle (left of nav) -->
+<button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+  <span class="menu-icon">
+    <span class="line l1"></span>
+    <span class="line l2"></span>
+    <span class="line l3"></span>
+  </span>
+  <!-- <span class="menu-text">Menu</span> -->
+</button>
+
+<!-- nav bar -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="/courses.html">Courses</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      
+      <!-- ✅ Login & Signup buttons inside nav for small screens -->
+      <li class="mobile-auth">
+        <button class="login-btn" id="openLogin1">Login</button>
+        <button class="signup-btn" id="openSignup1">Sign Up</button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ✅ Desktop-only buttons -->
+  <!-- <div class="auth-buttons">
+    <button class="login-btn" id="openLogin">Login</button>
+    <button class="signup-btn" id="openSignup">Sign Up</button>
+  </div> -->
+<div class="auth-buttons" id="authSection">
+  <button class="login-btn" id="openLogin">Login</button>
+  <button class="signup-btn" id="openSignup">Sign Up</button>
+</div>
+
+<!-- ✅ New Section for Logged-in UI -->
+<div class="user-info" id="userSection" style="display:none;">
+  <span id="displayUsername"></span>
+  <button id="logoutBtn" class="logout-btn">Logout</button>
+</div>
+
+</header>
+<!-- ---------- Login Popup ---------- -->
+  <div class="overlay" id="loginOverlay">
+    <div class="popup">
+      <button class="close-btn" onclick="closePopup('loginOverlay')">×</button>
+      <h2>Welcome Back</h2>
+      <!-- <form>
+        <input type="text" placeholder="Enter your email" required>
+        <input type="password" placeholder="Enter your password" required>
+        <button type="submit" class="submit">Login</button>
+      </form> -->
+      <form id="loginForm">
+  <input type="email" name="loginEmail" placeholder="Enter your email" required>
+  <input type="password" name="loginPassword" placeholder="Enter your password" required>
+  <button type="submit" class="submit">Login</button>
+</form>
+
+      <p>Don't have an account? <a href="#" id="switchToSignup">Sign Up</a></p>
+    </div>
+  </div>
+
+  <!-- ---------- Signup Popup ---------- -->
+  <div class="overlay" id="signupOverlay">
+    <div class="popup">
+      <button class="close-btn" onclick="closePopup('signupOverlay')">×</button>
+      <h2>Create Your Account</h2>
+      <!-- <form>
+        <input type="text" placeholder="Enter your username" required>
+        <input type="email" placeholder="Enter your email" required>
+        <input type="password" placeholder="Enter your password" required>
+        <input type="password" placeholder="Confirm your password" required>
+        <button type="submit" class="submit">Sign Up</button>
+      </form> -->
+      <form id="signupForm">
+  <input type="text" name="username" placeholder="Enter your username" required>
+  <input type="email" name="email" placeholder="Enter your email" required>
+  <input type="password" name="password" placeholder="Enter your password" required>
+  <input type="password" name="confirmPassword" placeholder="Confirm your password" required>
+  <button type="submit" class="submit">Sign Up</button>
+</form>
+
+      <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+    </div>
+  </div>
+
+
+  <!-- Hero Section -->
+  <!-- <section class="hero">
+    <div class="hero-text">
+      <h1 style="font-size: 50px;">Learn Anytime, <span style="color: darkturquoise;"> Anywhere with EduConnect</span></h1>
+      <p>Unlock your potential with expert-led courses and a global community. EduConnect empowers you to master new skills on your schedule. Learn from industry professionals through interactive lessons, live sessions, and real-world projects.</p>
+      <button type="button" onclick="window.location.href='/courses.html';">Explore Courses<i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+        <img src="https://github.com/Poojaself01/EduConnect/blob/main/image2-removebg-preview.png?raw=true" alt="Students Learning">
+  </section> -->
+  <!-- ------------------------------------------------------ -->
+ <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1 style="font-size: 50px;">Learn Anytime, <span style="color: darkturquoise;"> Anywhere with EduConnect</span></h1>
+      <p>Unlock your potential with expert-led courses and a global community. EduConnect empowers you to master new skills on your schedule. Learn from industry professionals through interactive lessons, live sessions, and real-world projects.</p>
+      <button type="button" onclick="window.location.href='/courses.html';">Explore Courses<i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+        <img src="https://github.com/Poojaself01/EduConnect/blob/main/image2-removebg-preview.png?raw=true" alt="Students Learning">
+  </section>
+  <!-- ------------------------------------------------------ -->
+
+   <!-- ✅ New Key Features Section -->
+<section class="key-features">
+  <h2>Key Features</h2>
+  <div class="feature-grid">
+    <div class="feature">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Expert Teachers" />
+      <h3>Expert Teachers</h3>
+      <p>Learn from industry-leading professionals and certified instructors.</p>
+      <button>Enroll Now</button>
+    </div>
+    <div class="feature">
+      <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Video Lessons" />
+      <h3>Video Lessons</h3>
+      <p>Interactive video-based learning that makes complex topics simple.</p>
+      <button>Enroll Now</button>
+    </div>
+    <div class="feature">
+      <img src="https://cdn-icons-png.flaticon.com/512/1688/1688400.png" alt="Interactive Quizzes" />
+      <h3>Interactive Quizzes</h3>
+      <p>Test your knowledge with engaging and fun quizzes after each module.</p>
+      <button>Enroll Now</button>
+    </div>
+    <div class="feature">
+      <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Learn on Any Device" />
+      <h3>Learn on Any Device</h3>
+      <p>Access your courses anytime, anywhere, on desktop or mobile.</p>
+      <button>Enroll Now</button>
+    </div>
+  </div>
+</section>
+
+   <!-- ----------------------------------------------------- -->
+
+ 
+  <!-- Courses -->
+  <section class="courses">
+    <h2>Explore Our Popular Courses</h2>
+    <div class="course-cards">
+      <div class="course-card">
+        <img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg" alt="">
+        <div class="info">
+          <h3>Advanced Web Development</h3>
+          <p>Master front-end and back-end technologies to build scalable web applications.</p>
+          <p class="price">$199</p>
+          <button type="button" onclick="window.location.href='/courseDetails.html';">Learn More</button>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="">
+        <div class="info">
+          <h3>Data Science Fundamentals</h3>
+          <p>Learn Python, machine learning, and data analysis to solve real-world problems.</p>
+          <p class="price">$249</p>
+          <button type="button" onclick="window.location.href='/courseDetails.html';">Learn More</button>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" alt="">
+        <div class="info">
+          <h3>Graphic Design Masterclass</h3>
+          <p>Unleash your creativity with Photoshop, Illustrator, and UI/UX design principles.</p>
+          <p class="price">$179</p>
+          <button type="button" onclick="window.location.href='/courseDetails.html';">Learn More</button>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=800&q=60" alt="Data Analytics" />
+        <div class="info">
+            <h3>Data Analytics Program</h3>
+            <p>Learn data visualization, Excel, SQL, and Power BI to turn data into smart business insights.</p>
+            <p class="price">$209</p>
+            <button class="learn-more" type="button" onclick="window.location.href='/courseDetails.html';">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ------------------------------------------------------------------ -->
+
+   <!-- Why Choose EduConnect -->
+  <section class="features">
+    <h2>Why Choose EduConnect?</h2>
+    <div class="feature-boxes">
+      <div class="feature-box">
+        <h3>100K+</h3>
+        <p>Enrolled Students</p>
+      </div>
+      <div class="feature-box">
+        <h3>500+</h3>
+        <p>Diverse Courses</p>
+      </div>
+      <div class="feature-box">
+        <h3>Expert</h3>
+        <p>Certified Instructors</p>
+      </div>
+      <div class="feature-box">
+        <h3>Global</h3>
+        <p>Learning Community</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Students Say</h2>
+    <div class="testimonial-boxes">
+      <div class="testimonial">
+        <p>"EduConnect transformed my career! The instructors are top-notch, and the content is engaging and relevant."</p>
+        <span>- Alice Johnson, Software Engineer</span>
+      </div>
+      <div class="testimonial">
+        <p>"The flexibility to learn at my own pace made all the difference. Fantastic platform and community!"</p>
+        <span>- Bob Williams, Marketing Specialist</span>
+      </div>
+      <div class="testimonial">
+        <p>"EduConnect helped me upskill quickly with easy-to-follow lessons and expert guidance. Highly recommended!"</p>
+        <span>- Sarah Johnson, Data Analyst</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to Start Your Learning Journey?</h2>
+    <p>Join thousands of students and transform your skills today with access to premium content and a supportive community.</p>
+    <!-- <button>Get Started Now</button> -->
+     <button onclick="location.href='/courses.html'">Get Started Now</button>
+  </section>
+
+  <!-- Footer
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>EduConnect</h4>
+        <p>Your platform for learning anytime, anywhere.</p>
+        <div class="socials">
+          <a href="#">🌐</a>
+          <a href="#">📘</a>
+          <a href="#">📸</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Data Science</a></li>
+          <li><a href="#">Graphic Design</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© 2024 EduConnect. All rights reserved.</p>
+
+  </footer> -->
+
+  <!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-section brand">
+      <h4 class="footer-logo">EduConnect</h4>
+      <p>Your platform for learning anytime,<br>anywhere. Empowering students worldwide.</p>
+
+      <div class="footer-social-icons">
+        <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" aria-label="twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Courses</h4>
+      <ul>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">Data Science</a></li>
+        <li><a href="#">Graphic Design</a></li>
+        <li><a href="#">Digital Marketing</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="footer-note">© 2024 EduConnect. All rights reserved.</p>
+</footer>
+
+  <script>
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = menuToggle.classList.toggle('open');
+  nav.classList.toggle('active', isOpen);
+  menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+//----------js for login and sign up page----------
+ const loginOverlay = document.getElementById('loginOverlay');
+    const signupOverlay = document.getElementById('signupOverlay');
+
+    // Open popups
+    document.getElementById('openLogin').onclick = () => {
+      loginOverlay.style.display = 'flex';
+    };
+    document.getElementById('openSignup').onclick = () => {
+      signupOverlay.style.display = 'flex';
+    };
+//----------------------------------------------------------------------
+// Open popups
+    document.getElementById('openLogin1').onclick = () => {
+      loginOverlay.style.display = 'flex';
+    };
+    document.getElementById('openSignup1').onclick = () => {
+      signupOverlay.style.display = 'flex';
+    };
+//----------------------------------------------------------------------
+    // Close popup
+    function closePopup(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    // Switch between login and signup
+    document.getElementById('switchToSignup').onclick = () => {
+      loginOverlay.style.display = 'none';
+      signupOverlay.style.display = 'flex';
+    };
+
+    document.getElementById('switchToLogin').onclick = () => {
+      signupOverlay.style.display = 'none';
+      loginOverlay.style.display = 'flex';
+    };
+
+    // Close popup when clicking outside the box
+    window.onclick = (event) => {
+      if (event.target === loginOverlay) loginOverlay.style.display = 'none';
+      if (event.target === signupOverlay) signupOverlay.style.display = 'none';
+    };
+    //-----------------------------------done----------------------------------------
+   //-------------------------------- LOGIN / SIGNUP WITH LOCAL STORAGE --------------------------------//
+/* ----------------------------------------------------------
+    ✅ SIGN UP (stores multiple users)
+----------------------------------------------------------- */
+document.getElementById("signupForm")?.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const username = this.username.value.trim();
+    const email = this.email.value.trim();
+    const password = this.password.value.trim();
+    const confirmPass = this.confirmPassword.value.trim();
+
+    if (password !== confirmPass) {
+        alert("❌ Passwords do not match!");
+        return;
+    }
+
+    // ✅ Get existing users or create empty list
+    let users = JSON.parse(localStorage.getItem("edu_user")) || [];
+
+    // ✅ Check if email already exists
+    if (users.some((u) => u.email === email)) {
+        alert("⚠ Account already exists with this email. Try logging in.");
+        return;
+    }
+
+    // ✅ Save new user in the list
+    users.push({ username, email, password });
+    localStorage.setItem("edu_user", JSON.stringify(users));
+
+    // ✅ Mark logged-in user
+    localStorage.setItem("edu_logged_in", email);
+    // localStorage.setItem("edu_user", JSON.stringify({ username, email, password }));
+
+    alert("✅ Account created successfully!");
+    window.location.href = "courses.html";
+});
+
+
+/* ----------------------------------------------------------
+    ✅ LOGIN (supports multiple users)
+----------------------------------------------------------- */
+document.getElementById("loginForm")?.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const loginEmail = this.loginEmail.value.trim();
+    const loginPassword = this.loginPassword.value.trim();
+
+    let users = JSON.parse(localStorage.getItem("edu_user")) || [];
+    // ✅ Search matching user
+    const userFound = users.find(
+        (u) => u.email === loginEmail && u.password === loginPassword
+    );
+
+    // if (!users || users.email !== loginEmail || users.password !== loginPassword) {
+    if (!userFound){
+        alert("❌ Incorrect email or password!");
+        return;
+    }
+
+    // ✅ Save logged-in user details
+    localStorage.setItem("edu_logged_in", loginEmail);
+    localStorage.setItem("edu_user", JSON.stringify(users));
+
+    alert(`✅ Welcome back ${userFound.username}!`);
+    window.location.href = "courses.html";
+});
+
+//-----------------------------------------------------------------------------
+// ✅ Show Logged-in UI on Navbar
+function updateNavbar() {
+  const loggedIn = localStorage.getItem("edu_logged_in");
+  let users = JSON.parse(localStorage.getItem("edu_user")) || [];
+    // ✅ Search matching user
+    const userFound = users.find(
+        (u) => u.email === loggedIn
+    );
+
+  const authSection = document.getElementById("authSection");
+  const mobileAuth = document.getElementsByClassName("mobile-auth");
+  const userSection = document.getElementById("userSection");
+  const displayUsername = document.getElementById("displayUsername");
+
+  if (loggedIn && userFound) {
+    mobileAuth[0].style.display = "none";
+    authSection.style.display = "none";
+    userSection.style.display = "flex";
+    displayUsername.textContent = `👋 Hi, ${userFound.username}`;
+  } else {
+    authSection.style.display = "flex";
+    userSection.style.display = "none";
+  }
+}
+updateNavbar();
+
+
+// ✅ Logout
+document.getElementById("logoutBtn")?.addEventListener("click", () => {
+  localStorage.removeItem("edu_logged_in");
+  alert("🔓 You have been logged out!");
+  window.location.reload();
+});
+
+
+</script> 
+</body>
+</html>

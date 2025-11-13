@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | EduConnect</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="/navBar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+     <header> 
+  <div class="logo">EduConnect</div>
+
+  <!-- ✅ Hamburger icon for small screens -->
+  <!-- <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div> -->
+  <!-- Menu toggle (left of nav) -->
+<button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+  <span class="menu-icon">
+    <span class="line l1"></span>
+    <span class="line l2"></span>
+    <span class="line l3"></span>
+  </span>
+  <!-- <span class="menu-text">Menu</span> -->
+</button>
+
+<!-- nav bar -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html" >Home</a></li>
+      <li><a href="/courses.html">Courses</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      
+      <!-- ✅ Login & Signup buttons inside nav for small screens -->
+      <li class="mobile-auth">
+        <button class="login-btn" id="openLogin1">Login</button>
+        <button class="signup-btn" id="openSignup1">Sign Up</button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ✅ Desktop-only buttons -->
+  <!-- <div class="auth-buttons">
+    <button class="login-btn" id="openLogin">Login</button>
+    <button class="signup-btn" id="openSignup">Sign Up</button>
+  </div> -->
+<div class="auth-buttons" id="authSection">
+  <button class="login-btn" id="openLogin">Login</button>
+  <button class="signup-btn" id="openSignup">Sign Up</button>
+</div>
+
+<!-- ✅ New Section for Logged-in UI -->
+<div class="user-info" id="userSection" style="display:none;">
+  <span id="displayUsername"></span>
+  <button id="logoutBtn" class="logout-btn">Logout</button>
+</div>
+
+</header>
+<!-- ---------- Login Popup ---------- -->
+  <div class="overlay" id="loginOverlay">
+    <div class="popup">
+      <button class="close-btn" onclick="closePopup('loginOverlay')">×</button>
+      <h2>Welcome Back</h2>
+      <!-- <form>
+        <input type="text" placeholder="Enter your email" required>
+        <input type="password" placeholder="Enter your password" required>
+        <button type="submit" class="submit">Login</button>
+      </form> -->
+      <form id="loginForm">
+  <input type="email" name="loginEmail" placeholder="Enter your email" required>
+  <input type="password" name="loginPassword" placeholder="Enter your password" required>
+  <button type="submit" class="submit">Login</button>
+</form>
+
+      <p>Don't have an account? <a href="#" id="switchToSignup">Sign Up</a></p>
+    </div>
+  </div>
+
+  <!-- ---------- Signup Popup ---------- -->
+  <div class="overlay" id="signupOverlay">
+    <div class="popup">
+      <button class="close-btn" onclick="closePopup('signupOverlay')">×</button>
+      <h2>Create Your Account</h2>
+      <!-- <form>
+        <input type="text" placeholder="Enter your username" required>
+        <input type="email" placeholder="Enter your email" required>
+        <input type="password" placeholder="Enter your password" required>
+        <input type="password" placeholder="Confirm your password" required>
+        <button type="submit" class="submit">Sign Up</button>
+      </form> -->
+      <form id="signupForm">
+  <input type="text" name="username" placeholder="Enter your username" required>
+  <input type="email" name="email" placeholder="Enter your email" required>
+  <input type="password" name="password" placeholder="Enter your password" required>
+  <input type="password" name="confirmPassword" placeholder="Confirm your password" required>
+  <button type="submit" class="submit">Sign Up</button>
+</form>
+
+      <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+    </div>
+  </div>
+
+
+    <!-- HERO -->
+    <!-- <section class="contact-hero">
+        <div class="hero-content">
+            <h1>We’re Here to Help You</h1>
+            <p>Have a question, feedback, or need support? Our team is always ready to assist you.</p>
+        </div>
+    </section> -->
+    <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Let's Connect and<br>Learn Together</h1>
+        <!-- <p>We’re here to help you on your educational journey. Reach out with any questions, feedback, or inquiries.</p> -->
+         <p>
+    We’re here to help you on your educational journey. Reach out with any questions, feedback, or inquiries.
+    Our team responds quickly and ensures you get the right support whenever you need it.
+</p>
+
+    </div>
+    <div class="hero-img">
+        <img src="https://images.pexels.com/photos/3182826/pexels-photo-3182826.jpeg" alt="">
+    </div>
+</section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-container">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p class="info-text">You can reach us using any of the following methods.</p>
+
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <h4>Email</h4>
+                    <p>support@educonnect.com</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                    <h4>Phone</h4>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <h4>Address</h4>
+                    <p>123 Learning Street,<br>Knowledge City, LC 90021</p>
+                </div>
+            </div>
+
+            <div class="social-icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+
+            <form>
+                <label>Your Name</label>
+                <input type="text" placeholder="Enter your name">
+
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email">
+
+                <label>Message</label>
+                <textarea placeholder="Write your message..."></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="map-section">
+        <h2>Locate Us</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.42927986964!2d77.5945623152143!3d12.97159899085183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU4JzE4LjIiTiA3N8KwMzUnNDEuNiJF!5e0!3m2!1sen!2sin!4v123456789" 
+            loading="lazy">
+        </iframe>
+    </section>
+    <!-- ----------------------------------------- -->
+      <!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-section brand">
+      <h4 class="footer-logo">EduConnect</h4>
+      <p>Your platform for learning anytime,<br>anywhere. Empowering students worldwide.</p>
+
+      <div class="footer-social-icons">
+        <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" aria-label="twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Courses</h4>
+      <ul>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">Data Science</a></li>
+        <li><a href="#">Graphic Design</a></li>
+        <li><a href="#">Digital Marketing</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="footer-note">© 2024 EduConnect. All rights reserved.</p>
+</footer>
+<!-- ----------------------------------------------------- -->
+    <script>
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = menuToggle.classList.toggle('open');
+  nav.classList.toggle('active', isOpen);
+  menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+//----------js for login and sign up page----------
+ const loginOverlay = document.getElementById('loginOverlay');
+    const signupOverlay = document.getElementById('signupOverlay');
+
+    // Open popups
+    document.getElementById('openLogin').onclick = () => {
+      loginOverlay.style.display = 'flex';
+    };
+    document.getElementById('openSignup').onclick = () => {
+      signupOverlay.style.display = 'flex';
+    };
+//----------------------------------------------------------------------
+// Open popups
+    document.getElementById('openLogin1').onclick = () => {
+      loginOverlay.style.display = 'flex';
+    };
+    document.getElementById('openSignup1').onclick = () => {
+      signupOverlay.style.display = 'flex';
+    };
+//----------------------------------------------------------------------
+    // Close popup
+    function closePopup(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    // Switch between login and signup
+    document.getElementById('switchToSignup').onclick = () => {
+      loginOverlay.style.display = 'none';
+      signupOverlay.style.display = 'flex';
+    };
+
+    document.getElementById('switchToLogin').onclick = () => {
+      signupOverlay.style.display = 'none';
+      loginOverlay.style.display = 'flex';
+    };
+
+    // Close popup when clicking outside the box
+    window.onclick = (event) => {
+      if (event.target === loginOverlay) loginOverlay.style.display = 'none';
+      if (event.target === signupOverlay) signupOverlay.style.display = 'none';
+    };
+    //-----------------------------------done----------------------------------------
+   //-------------------------------- LOGIN / SIGNUP WITH LOCAL STORAGE --------------------------------//
+/* ----------------------------------------------------------
+    ✅ SIGN UP (stores multiple users)
+----------------------------------------------------------- */
+document.getElementById("signupForm")?.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const username = this.username.value.trim();
+    const email = this.email.value.trim();
+    const password = this.password.value.trim();
+    const confirmPass = this.confirmPassword.value.trim();
+
+    if (password !== confirmPass) {
+        alert("❌ Passwords do not match!");
+        return;
+    }
+
+    // ✅ Get existing users or create empty list
+    let users = JSON.parse(localStorage.getItem("edu_user")) || [];
+
+    // ✅ Check if email already exists
+    if (users.some((u) => u.email === email)) {
+        alert("⚠ Account already exists with this email. Try logging in.");
+        return;
+    }
+
+    // ✅ Save new user in the list
+    users.push({ username, email, password });
+    localStorage.setItem("edu_user", JSON.stringify(users));
+
+    // ✅ Mark logged-in user
+    localStorage.setItem("edu_logged_in", email);
+    // localStorage.setItem("edu_user", JSON.stringify({ username, email, password }));
+
+    alert("✅ Account created successfully!");
+    window.location.href = "courses.html";
+});
+
+
+/* ----------------------------------------------------------
+    ✅ LOGIN (supports multiple users)
+----------------------------------------------------------- */
+document.getElementById("loginForm")?.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const loginEmail = this.loginEmail.value.trim();
+    const loginPassword = this.loginPassword.value.trim();
+
+    let users = JSON.parse(localStorage.getItem("edu_user")) || [];
+    // ✅ Search matching user
+    const userFound = users.find(
+        (u) => u.email === loginEmail && u.password === loginPassword
+    );
+
+    // if (!users || users.email !== loginEmail || users.password !== loginPassword) {
+    if (!userFound){
+        alert("❌ Incorrect email or password!");
+        return;
+    }
+
+    // ✅ Save logged-in user details
+    localStorage.setItem("edu_logged_in", loginEmail);
+    localStorage.setItem("edu_user", JSON.stringify(users));
+
+    alert(`✅ Welcome back ${userFound.username}!`);
+    window.location.href = "courses.html";
+});
+
+//-----------------------------------------------------------------------------
+// ✅ Show Logged-in UI on Navbar
+function updateNavbar() {
+  const loggedIn = localStorage.getItem("edu_logged_in");
+  let users = JSON.parse(localStorage.getItem("edu_user")) || [];
+    // ✅ Search matching user
+    const userFound = users.find(
+        (u) => u.email === loggedIn
+    );
+
+  const authSection = document.getElementById("authSection");
+  const mobileAuth = document.getElementsByClassName("mobile-auth");
+  const userSection = document.getElementById("userSection");
+  const displayUsername = document.getElementById("displayUsername");
+
+  if (loggedIn && userFound) {
+    mobileAuth[0].style.display = "none";
+    authSection.style.display = "none";
+    userSection.style.display = "flex";
+    displayUsername.textContent = `👋 Hi, ${userFound.username}`;
+  } else {
+    authSection.style.display = "flex";
+    userSection.style.display = "none";
+  }
+}
+updateNavbar();
+
+
+// ✅ Logout
+document.getElementById("logoutBtn")?.addEventListener("click", () => {
+  localStorage.removeItem("edu_logged_in");
+  alert("🔓 You have been logged out!");
+  window.location.reload();
+});
+
+
+</script> 
+
+</body>
+</html>
